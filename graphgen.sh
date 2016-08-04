@@ -1,4 +1,5 @@
 #!/bin/bash
+command -v wget >/dev/null 2>&1 || { echo >&2 "I require wget but it's not installed.  Aborting."; exit 1; }
 # Check all files exist
 if ! [ -f "./rudy.c" ]; then
     wget http://web.stanford.edu/~yyye/yyye/Gset/rudy.c; fi
