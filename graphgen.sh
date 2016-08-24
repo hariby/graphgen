@@ -17,9 +17,9 @@ if [ $# -ne 1 ]; then
 NUM_VERTEX=$1
 INDICATOR='##################################################                                                  '
     echo "Generating {±1}-weighted complete graphs of order $NUM_VERTEX ..."
-for i in {1..1}
+for i in {1..100}
 do
-#    echo -ne "[${INDICATOR:(50-$i/2):50}] ($i%)\r"
+    echo -ne "[${INDICATOR:(50-$i/2):50}] ($i%)\r"
     ./rudy -clique $NUM_VERTEX -random 0 1 $NUM_VERTEX"$i" -times 2 -plus -1 >> WK"$NUM_VERTEX"_"$i".rud
 done
 echo
